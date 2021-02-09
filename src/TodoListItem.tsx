@@ -1,16 +1,18 @@
 import React from 'react'
 
 interface TodoListItemProps {
-    todo: {
-        text: string;
-        complete: boolean;
-    }
+    todo: Todo
 }
 
-export const TodoListItem = props => {
+const TodoListItem: React.FC<TodoListItemProps> = ({ todo }) => {
     return (
         <li>
-          Content  
+            <label>                
+                <input type='checkbox' checked={todo.complete} />
+                {todo.text}
+            </label>  
         </li>
     )
 }
+
+export default TodoListItem
