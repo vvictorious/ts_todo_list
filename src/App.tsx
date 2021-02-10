@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import TodoListItem from './TodoListItem'
 
 const todos: Array<Todo> = [
@@ -14,7 +14,11 @@ const todos: Array<Todo> = [
 
 const App = () => {
   return (
-    <TodoListItem todo={todos[0]} />
+    <Fragment>
+      <TodoListItem todo={todos[0]} />
+      <TodoListItem todo={todos[1]} />
+    </Fragment>
+
   );
 }
 
